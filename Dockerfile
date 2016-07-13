@@ -1,7 +1,7 @@
 FROM fedora:latest
 MAINTAINER Michael Scherer
 
-RUN dnf install rubygem-bundler ruby-devel curl-devel zlib-devel patch ImageMagick gcc-c++ && dnf clean all
+RUN dnf install -y rubygem-bundler ruby-devel curl-devel zlib-devel patch ImageMagick gcc-c++ && dnf clean all
 RUN useradd middleman -d /srv/middleman
 USER middleman
 ADD . /srv/middleman
