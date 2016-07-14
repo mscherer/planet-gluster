@@ -7,6 +7,7 @@ USER middleman
 ADD . /srv/middleman
 WORKDIR /srv/middleman
 RUN bundle install
+ENV PATH /usr/bin:/bin:/srv/middleman/bin
 RUN bundle exec middleman build
 CMD bundle exec middleman server
 EXPOSE 4567
