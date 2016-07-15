@@ -12,7 +12,7 @@ RUN ["/usr/bin/bundle","install"]
 ENV PATH /usr/bin:/bin:/srv/middleman/bin
 RUN ["/usr/bin/bundle", "exec", "middleman", "build"]
 
-CMD /bin/pwd
+CMD ['/usr/bin/sleep', '3d']
 #ENTRYPOINT ["/usr/bin/bundle", "exec", "middleman"]
 
 #CMD ['server']
