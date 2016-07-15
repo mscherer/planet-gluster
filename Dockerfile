@@ -8,10 +8,10 @@ USER middleman
 
 ADD . /srv/middleman
 WORKDIR /srv/middleman
-RUN bundle install
+RUN ["/usr/bin/bundle","install"]
 ENV PATH /usr/bin:/bin:/srv/middleman/bin
-RUN bundle exec middleman build
+RUN ["/usr/bin/bundle", "exec", "middleman", "build"]
 
-CMD ls && pwd && bundle exec middleman server
+ENTRYPOINT ["/usr/bin/bundle", "exec", "middleman", "server"]
 
 EXPOSE 4567
