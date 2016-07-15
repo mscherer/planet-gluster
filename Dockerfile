@@ -18,8 +18,8 @@ RUN /usr/bin/chmod -R g+rw /srv/middleman
 RUN /usr/bin/find /srv/middleman -type d -exec chmod g+x {} +
 
 USER 1000
-#CMD ["/usr/bin/sleep", "3d"]
-ENTRYPOINT ["/usr/bin/bundle", "exec", "middleman"]
-CMD ["server"]
+CMD ["/usr/bin/sleep", "3d"]
+#ENTRYPOINT ["/usr/bin/bundle", "exec", "middleman"]
+#CMD ["server"]
 
 EXPOSE 4567
