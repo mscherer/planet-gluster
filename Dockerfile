@@ -12,7 +12,7 @@ RUN ["/usr/bin/bundle","install"]
 ENV PATH /usr/bin:/bin:/srv/middleman/bin
 RUN ["/usr/bin/bundle", "exec", "middleman", "build"]
 
-ENTRYPOINT ['/bin/ls']
+CMD /bin/ls
 #ENTRYPOINT ["/usr/bin/bundle", "exec", "middleman"]
 
 #CMD ['server']
