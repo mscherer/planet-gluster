@@ -1,7 +1,7 @@
 FROM fedora:latest
 MAINTAINER Michael Scherer
 
-RUN dnf install -y make redhat-rpm-config git tar rubygem-bundler ruby-devel curl-devel zlib-devel patch ImageMagick gcc-c++ && dnf clean all
+RUN dnf install -y make redhat-rpm-config git tar rubygem-bundler ruby-devel curl-devel zlib-devel patch ImageMagick gcc-c++ findutils && dnf clean all
 RUN useradd middleman -d /srv/middleman -g 0 -K 'UMASK=002' -u 1000
 
 USER 1000
