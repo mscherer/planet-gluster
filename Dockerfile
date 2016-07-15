@@ -12,8 +12,9 @@ RUN ["/usr/bin/bundle","install"]
 ENV PATH /usr/bin:/bin:/srv/middleman/bin
 RUN ["/usr/bin/bundle", "exec", "middleman", "build"]
 
-ENTRYPOINT ["/usr/bin/bundle", "exec", "middleman"]
+ENTRYPOINT ['/bin/ls']
+#ENTRYPOINT ["/usr/bin/bundle", "exec", "middleman"]
 
-CMD ['server']
+#CMD ['server']
 
 EXPOSE 4567
