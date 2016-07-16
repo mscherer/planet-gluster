@@ -12,8 +12,8 @@ ENV PATH /usr/bin:/bin:/usr/local/bin
 RUN /usr/bin/bundle exec middleman build
 
 USER 1000
-#CMD ["/usr/bin/sleep", "3d"]
-ENTRYPOINT ["/usr/bin/bundle", "exec", "middleman"]
-CMD ["server"]
+CMD ["/usr/bin/sleep", "3d"]
+#ENTRYPOINT ["/usr/bin/bundle", "exec", "middleman"]
+#CMD ["server"]
 
 EXPOSE 4567
