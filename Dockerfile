@@ -2,6 +2,7 @@ FROM fedora:latest
 MAINTAINER Michael Scherer
 
 RUN dnf install -y make redhat-rpm-config git tar rubygem-bundler ruby-devel curl-devel zlib-devel patch ImageMagick gcc-c++ findutils && dnf clean all
+RUN dnf install -y nginx && dnf clean all
 
 # we need -K 'UMASK=002' to make sure /srv/middleman is readable
 # -g 0 to have the right group
@@ -23,9 +24,8 @@ RUN /usr/bin/bundle install
 ENV PATH /usr/bin:/bin:/usr/local/bin
 
 RUN /usr/bin/bundle exec middleman build
-
+RUN /bin/cp /srv/middleman/deployment/nginx/nginx.conf /etc/nginx/nginx.conf
 USER 1000
-ENTRYPOINT ["/usr/bin/bundle", "exec", "middleman"]
-CMD ["server"]
+CMD ['/usr/sbin/nginx']
 
-EXPOSE 4567
+EXPOSE 8080
