@@ -25,6 +25,7 @@ ENV PATH /usr/bin:/bin:/usr/local/bin
 
 RUN /usr/bin/bundle exec middleman build
 RUN /bin/cp /srv/middleman/deployment/nginx/nginx.conf /etc/nginx/nginx.conf
+RUN /usr/bin/chmod 750 /var/lib/nginx/ && chown :root /var/lib/nginx/
 USER 1000
 CMD ["/usr/sbin/nginx"]
 
