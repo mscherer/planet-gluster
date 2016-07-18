@@ -26,6 +26,6 @@ ENV PATH /usr/bin:/bin:/usr/local/bin
 RUN /usr/bin/bundle exec middleman build
 RUN /bin/cp /srv/middleman/deployment/nginx/nginx.conf /etc/nginx/nginx.conf
 USER 1000
-CMD ['/usr/sbin/nginx']
+CMD ["/usr/sbin/nginx"]
 
 EXPOSE 8080
